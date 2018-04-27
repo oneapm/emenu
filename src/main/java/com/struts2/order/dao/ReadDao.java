@@ -34,8 +34,7 @@ public class ReadDao {
 			map.put("order_num", ((AbstractOrder) list.get(i)).getOrdNum());
 			map.put("order_res_num",
 					((AbstractOrder) list.get(i)).getOrdResNum());
-			
-			//´æ·Å·¹µêÃû³Æ
+
 			map.put("order_res",ListSelectDao.select(((AbstractOrder) list.get(i)).getOrdResNum()));
 			map.put("order_date", ((AbstractOrder) list.get(i)).getOrdDate());
 			map.put("order_people", ((AbstractOrder) list.get(i)).getOrdNumber());

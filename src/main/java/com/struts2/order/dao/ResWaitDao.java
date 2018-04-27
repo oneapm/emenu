@@ -1,16 +1,12 @@
 package com.struts2.order.dao;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ListIterator;
-
+import com.hibernate.user.HibernateSessionFactory;
+import com.hibernate.user.User;
 import org.hibernate.Criteria;
-import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 
-import com.hibernate.user.HibernateSessionFactory;
-import com.hibernate.user.User;
+import java.util.List;
 
 public class ResWaitDao {
 	public String reswaiter(int res_num) {
