@@ -70,11 +70,11 @@ a{
 <div>金额：${requestScope.total}</div>
 <div><h2>详细订单信息</h2></div>
 <form action="order.action" onsubmit="showLoading();">
-<div><span>用餐人数：</span><input type="text" id="people" name="people" size="10px;" /></div>
-<div><span>用餐时间：</span><input type="text" id="c7" name="time" onClick="J.calendar.get();"/></div>
-<div style="position:absolute;"><span id="sub"><input type="submit" style="width:100px; height:30px; background: url(list/img/btn.png);" onclick="qwe()"/></span>
-<span id="res"><input type="reset" style="width:100px; height:30px; background: url(list/img/btn.png);"/></span></div>
-<div align="center"><a href="menu?${requestScope.res_num}" style="float: right;"><span id="retn">返回</span></a></div>
+	<div><span>用餐人数：</span><input type="text" id="people" name="people" size="10px;" /></div>
+	<div><span>用餐时间：</span><input type="text" id="c7" name="time" onClick="J.calendar.get();"/></div>
+	<div style="position:absolute;"><span id="sub"><input type="submit" style="width:100px; height:30px; background: url(list/img/btn.png);" onclick="qwe()"/></span>
+	<span id="res"><input type="reset" style="width:100px; height:30px; background: url(list/img/btn.png);"/></span></div>
+	<div align="center"><a href="menu?${requestScope.res_num}" style="float: right;"><span id="retn">返回</span></a></div>
 </form>
 <div id="load_msg">iloa</div>
 <script type="text/javascript">

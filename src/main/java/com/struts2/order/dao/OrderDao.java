@@ -28,22 +28,22 @@ public class OrderDao {
 			int order_people, String username, String date, String name) {
 		Order order = new Order();
 
-		order.setOrdDate(date);// 日期
-		order.setOrdNum(order_num);// 订单号
-		order.setOrdNumber(order_people);// 人数
-		order.setOrdPrise(Float.valueOf(order_price));// 金额
-		order.setOrdResNum(res_num);// 饭店编号
-		order.setOrdUserName(username);// 用户名
-		order.setOrdWaiterName(name);//服务员名字
+		order.setOrdDate(date);
+		order.setOrdNum(order_num);
+		order.setOrdNumber(order_people);
+		order.setOrdPrise(Float.valueOf(order_price));
+		order.setOrdResNum(res_num);
+		order.setOrdUserName(username);
+		order.setOrdWaiterName(name);
 
 		Session session = HibernateSessionFactory.getSession();
 		Transaction tx = null;
 		try {
-			// 开始一个事务
+
 			tx = session.beginTransaction();
-			// 持久化操作
+
 			session.save(order);
-			// 提交事务
+
 			tx.commit();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -61,7 +61,7 @@ public class OrderDao {
 		List rs = new ArrayList();
 		List list;
 		List list_copy;
-//		Order order;6
+
 		List<Map<String, Object>> list1 = new ArrayList<Map<String, Object>>();
 
 		Session session = HibernateSessionFactory.getSession();
@@ -76,14 +76,13 @@ public class OrderDao {
 			map.put("order_res_num",
 					((AbstractOrder) list.get(i)).getOrdResNum());
 			
-			//存放饭店名称
 			map.put("order_res",ListSelectDao.select(((AbstractOrder) list.get(i)).getOrdResNum()));
 			map.put("order_mon", ((AbstractOrder) list.get(i)).getOrdPrise());
 			map.put("order_date", ((AbstractOrder) list.get(i)).getOrdDate());
 
 			list1.add(map);
 		}
-//		System.out.println(list1.get(0));
+
 		session.close();
 		return list1;
 	}

@@ -1,27 +1,18 @@
 package com.struts2.login.dao;
 
-import java.util.List;
-
+import com.hibernate.user.HibernateSessionFactory;
+import com.hibernate.user.User;
 import org.hibernate.Criteria;
-import org.hibernate.Hibernate;
-import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.criterion.Restrictions;
 
-import com.hibernate.user.HibernateSessionFactory;
-import com.hibernate.user.User;
+import java.util.List;
 
-/**
- * 功能：判断用户名和密码是否正确 作者：tang 时间：2014年3月19日 M：处理用户名和密码的业务逻辑层
- */
 public class LoginDao {
 
-	/**
-	 * 处理方法
-	 */
 	public boolean strLoginDeal(String username, String password) {
 		boolean sign = false;
 		Session session = HibernateSessionFactory.getSession();
@@ -118,11 +109,11 @@ public class LoginDao {
 		Session session = sessionFactory.openSession();
 		Transaction tx = null;
 		try {
-			// 开始一个事务
+
 			tx = session.beginTransaction();
-			// 持久化操作
+
 			session.save(user);
-			// 提交事务
+
 			tx.commit();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -152,11 +143,11 @@ public class LoginDao {
 		Session session = sessionFactory.openSession();
 		Transaction tx = null;
 		try {
-			// 开始一个事务
+
 			tx = session.beginTransaction();
-			// 持久化操作
+
 			session.save(user);
-			// 提交事务
+
 			tx.commit();
 		} catch (Exception e) {
 			e.printStackTrace();

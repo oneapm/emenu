@@ -62,8 +62,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div>
 				<s:iterator value="#session.list_res" status="L">
 				<!-- Movie -->
-				<div class="movie <s:if test="%{#L.index==3}">red</s:if>">
-					<s:if test="%{#L.index==3}"><h5 class="red_title">慢事务</h5></s:if>
+				<div class="movie">
 					<div class="movie-image">
 						<span class="play"><a href="menu.action?res_num=<s:property value="res_num"/>"><span class="name"><s:property value="res_name"/><br/><s:property value="res_add"/></span></a></span>
 						<a href="#"><img src="restaurant/images/<s:property value="res_img"/>" alt="movie" /></a>
@@ -91,13 +90,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	  <div class="cl">&nbsp;</div>
 	</div>
 	<!-- end Main -->
-
-	<!-- Footer -->
-	<div id="footer">
-		
-		<p> &copy; 2014 E_Menu. All Rights Reserved.  Designed by tangmingxu</p>
-	</div>
-	<!-- end Footer -->
 </div>
 <!-- end Shell -->
 </body>

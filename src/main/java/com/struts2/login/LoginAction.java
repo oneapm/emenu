@@ -3,11 +3,7 @@ package com.struts2.login;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.struts2.login.dao.LoginDao;
-/**
- * 功能：处理用户名和密码
- * 作者：tang
- * 时间：2014年3月19日
- * C：控制层*/
+
 public class LoginAction extends ActionSupport{
 	private String username;
 	private String password;
@@ -26,21 +22,28 @@ public class LoginAction extends ActionSupport{
 	
 	public String execute()throws Exception{
 		ActionContext ctx = ActionContext.getContext();
-//		ctx.getSession().clear();
+
 		String strRes = null;
+
 		boolean sign = false;
 		
 		ctx.getSession().put("user", getUsername());
+
 		LoginDao logindao = new LoginDao();
 		sign = logindao.strLoginDeal(getUsername(),getPassword());
+
 		int user_sign=1;
 		if(sign){
 			user_sign = logindao.checkSign(getUsername());
 			switch(user_sign){
-				case 1:strRes = "success";break;
-				case 2:strRes = "waiter";break;
-				case 3:strRes = "manager";break;
-				case 0:strRes = "success";break;
+				case 1:strRes = "success";
+					break;
+				case 2:strRes = "waiter";
+					break;
+				case 3:strRes = "manager";
+					break;
+				case 0:strRes = "success";
+					break;
 			}
 			//strRes = "success";
 		}else{

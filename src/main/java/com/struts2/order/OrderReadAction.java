@@ -16,7 +16,6 @@ public class OrderReadAction extends ActionSupport{
 		
 		ActionContext ctx = ActionContext.getContext();
 
-//		int order_num = (Integer) ctx.getSession().get("ordernum");
 		String username = (String) ctx.getSession().get("user");
 		OrderDao orderdao = new OrderDao();
 		

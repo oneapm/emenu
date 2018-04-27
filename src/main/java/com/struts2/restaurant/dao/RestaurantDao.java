@@ -111,7 +111,6 @@ public class RestaurantDao {
 
 		for (int i = 0; i < 6; i++) {
 			do {
-				// 如果产生的数相同继续循环
 				num = (rand.nextInt(n) + 1);
 
 			} while (bool[num]);
@@ -126,7 +125,7 @@ public class RestaurantDao {
 
 	public static void main(String[] args) throws HibernateException {
 		List<Map<String, Object>> rs = new ArrayList<Map<String, Object>>();
-		rs = SearchResraurant("姥姥");
+		rs = SearchResraurant("锟斤拷锟斤拷");
 		System.out.println(rs);
 	}
 
